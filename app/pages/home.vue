@@ -82,7 +82,7 @@ onMounted(() => {
       </div>
     </header>
 
-    <div class="p-5 space-y-6 -mt-3">
+    <div class="space-y-6 px-5 pb-8 pt-5">
       <!-- 2. Upcoming Flights Card -->
       <section>
         <h2 class="ops-section-title mb-3 ml-1">Upcoming Flight</h2>
