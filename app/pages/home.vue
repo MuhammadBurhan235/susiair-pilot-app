@@ -46,7 +46,6 @@ onMounted(() => {
     <header
       class="bg-primary text-white p-6 rounded-b-[32px] shadow-md relative overflow-hidden"
     >
-      <!-- Ornamen garis khas maskapai (opsional untuk desain) -->
       <div
         class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10 pointer-events-none"
       ></div>
@@ -157,7 +156,7 @@ onMounted(() => {
         </div>
       </section>
 
-      <!-- 4. Hours to Limit Section Terintegrasi Penuh -->
+      <!-- 4. Hours to Limit Section -->
       <section class="space-y-4">
         <div class="flex justify-between items-end px-1">
           <h2 class="ops-section-title mb-3 ml-1">Hours to Limit</h2>
@@ -170,12 +169,11 @@ onMounted(() => {
         <TrendChart />
       </section>
 
-      <!-- 5. My Documents Terintegrasi Pinia -->
+      <!-- 5. My Documents -->
       <section>
         <h2 class="ops-section-title mb-3 ml-1">My Documents</h2>
 
         <div class="ops-surface-card overflow-hidden">
-          <!-- Render data matang dari Pinia Getter -->
           <button
             v-for="doc in docStore.processedDocuments"
             :key="doc.id"
@@ -196,7 +194,6 @@ onMounted(() => {
               </div>
             </div>
 
-            <!-- Badge warna langsung diambil dari properti status.class -->
             <div :class="['ops-status-chip', doc.status.class]">
               {{ doc.status.label }}
             </div>

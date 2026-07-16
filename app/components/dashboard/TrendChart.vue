@@ -158,7 +158,7 @@ const chartOptions = computed(() => {
         :options="chartOptions"
       />
 
-      <!-- Skeleton Loading State (UX detail) -->
+      <!-- Skeleton Loading State -->
       <div
         v-else
         class="ops-chart-skeleton absolute inset-0 flex items-center justify-center animate-pulse"

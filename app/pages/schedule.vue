@@ -199,7 +199,6 @@ const handleDateClick = (dateStr: string) => {
 
     <!-- Grid Kalender -->
     <div class="ops-surface-card p-4 mb-6">
-      <!-- Label Hari -->
       <div class="grid grid-cols-7 gap-1 mb-2">
         <div
           v-for="day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
@@ -225,7 +224,6 @@ const handleDateClick = (dateStr: string) => {
           ]"
           :aria-label="`Open schedule for ${format(day, 'dd MMMM yyyy')}`"
         >
-          <!-- Angka Tanggal -->
           <span
             :class="[
               'text-sm font-semibold z-10',
@@ -237,9 +235,7 @@ const handleDateClick = (dateStr: string) => {
             {{ format(day, "d") }}
           </span>
 
-          <!-- Injeksi Data Jadwal dari Dictionary Pinia -->
           <template v-if="schedStore.scheduleMap[format(day, 'yyyy-MM-dd')]">
-            <!-- Warna Background Berdasarkan Duty Type (Tembus di bawah angka) -->
             <div
               class="absolute inset-0 rounded-[inherit] opacity-20"
               :style="{
@@ -248,7 +244,7 @@ const handleDateClick = (dateStr: string) => {
               }"
             ></div>
 
-            <!-- Kode Duty (Muncung di bawah angka) -->
+            <!-- Kode Duty -->
             <span
               class="text-xs font-bold mt-auto mb-1 relative z-10"
               :style="{
@@ -259,7 +255,6 @@ const handleDateClick = (dateStr: string) => {
               {{ schedStore.scheduleMap[format(day, "yyyy-MM-dd")].base_name }}
             </span>
 
-            <!-- Logika Badge: Centang vs Angka -->
             <span
               v-if="
                 schedStore.scheduleMap[format(day, 'yyyy-MM-dd')]
@@ -271,7 +266,6 @@ const handleDateClick = (dateStr: string) => {
                   schedStore.scheduleMap[format(day, 'yyyy-MM-dd')].base_color,
               }"
             >
-              <!-- Tampilkan ikon Check jika logbook sama dengan schedule -->
               <Check
                 v-if="
                   schedStore.scheduleMap[format(day, 'yyyy-MM-dd')]
@@ -283,7 +277,6 @@ const handleDateClick = (dateStr: string) => {
                 stroke-width="3"
               />
 
-              <!-- Tampilkan angka jika belum selesai -->
               <template v-else>
                 {{
                   schedStore.scheduleMap[format(day, "yyyy-MM-dd")]
@@ -296,7 +289,7 @@ const handleDateClick = (dateStr: string) => {
       </div>
     </div>
 
-    <!-- Legenda Duty Type (Sesuai instruksi brief) -->
+    <!-- Legenda Duty Type -->
     <div class="ops-surface-card mt-6 p-4">
       <h3 class="text-xs font-bold text-text-secondary uppercase mb-3 px-1">
         Legend

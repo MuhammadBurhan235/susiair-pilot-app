@@ -52,7 +52,6 @@ const getProgress = (current: number, limit: number) => {
 </script>
 
 <template>
-  <!-- Layout 2x2 grid pada layar sempit, berubah menjadi horizontal swipe pada layar lebih lebar -->
   <div
     class="grid grid-cols-2 gap-3 sm:flex sm:overflow-x-auto sm:snap-x sm:pb-2 hide-scrollbar"
   >
@@ -93,7 +92,7 @@ const getProgress = (current: number, limit: number) => {
       </article>
     </template>
 
-    <!-- Loading Skeleton jika data Pinia masih diproses -->
+    <!-- Loading Skeleton -->
     <template v-else>
       <div
         v-for="i in 4"

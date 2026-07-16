@@ -3,9 +3,7 @@ import { Home, CalendarDays, BookOpen, MoreHorizontal } from "lucide-vue-next";
 </script>
 
 <template>
-  <!-- Padding bawah (pb-16) agar konten tidak tertutup navigasi -->
   <div class="min-h-screen bg-background ops-nav-offset">
-    <!-- Tempat di mana konten halaman (Home/Schedule) akan dirender -->
     <slot />
 
     <!-- Bottom Navigation -->
@@ -30,7 +28,6 @@ import { Home, CalendarDays, BookOpen, MoreHorizontal } from "lucide-vue-next";
         <span class="ops-nav-label">Schedule</span>
       </NuxtLink>
 
-      <!-- Placeholder (Tidak perlu dibuat halamannya menurut brief) -->
       <button
         type="button"
         class="ops-nav-item ops-nav-item-disabled"

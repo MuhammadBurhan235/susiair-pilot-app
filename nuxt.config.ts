@@ -47,7 +47,6 @@ export default defineNuxtConfig({
   },
 
   app: {
-    // Tambahkan pageTransition di sini, sejajar dengan head
     pageTransition: { name: "page", mode: "out-in" },
 
     head: {

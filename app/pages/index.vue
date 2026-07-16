@@ -19,7 +19,6 @@ const handleLogin = () => {
     class="min-h-screen flex flex-col items-center justify-center bg-background px-6 py-8 ops-safe-top"
   >
     <div class="ops-auth-panel w-full max-w-sm px-5 py-8 sm:px-6">
-      <!-- Implementasi Logo Susi Air -->
       <div class="mb-8 flex w-full justify-center">
         <img
           src="/susiair-pilot-ops-index.png"
@@ -67,7 +66,6 @@ const handleLogin = () => {
           </div>
         </label>
 
-        <!-- Tombol Pill Shape (rounded-full) -->
         <button
           type="submit"
           class="ops-transition-standard ops-tap-feedback mt-2 w-full rounded-full bg-brand py-3.5 text-sm font-bold tracking-wide text-white shadow-md enabled:hover:bg-brand/95 enabled:hover:shadow-lg enabled:active:scale-95 enabled:active:bg-brand/90 disabled:cursor-not-allowed disabled:opacity-60"
@@ -77,15 +75,18 @@ const handleLogin = () => {
       </form>
 
       <!-- Helper Link -->
-      <div class="mt-8 flex justify-center">
-        <a
-          href="https://wa.me/6281234567890"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ops-link-inline text-[13px] font-medium"
-        >
-          Need help? Contact CRD
-        </a>
+      <div class="mt-8 flex justify-center text-[13px] font-medium">
+        <span class="text-text-secondary">
+          Need help?
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-600 hover:text-blue-800 underline transition-colors ml-1"
+          >
+            Contact CRD
+          </a>
+        </span>
       </div>
     </div>
   </div>
