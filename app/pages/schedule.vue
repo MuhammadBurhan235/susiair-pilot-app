@@ -260,7 +260,7 @@ const handleDateClick = (dateStr: string) => {
                 schedStore.scheduleMap[format(day, 'yyyy-MM-dd')]
                   .count_schedules
               "
-              class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center shadow-sm"
+              class="absolute -top-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold text-white shadow-sm"
               :style="{
                 backgroundColor:
                   schedStore.scheduleMap[format(day, 'yyyy-MM-dd')].base_color,
@@ -274,7 +274,7 @@ const handleDateClick = (dateStr: string) => {
                     .count_schedules
                 "
                 :size="10"
-                stroke-width="3"
+                stroke-width="2"
               />
 
               <template v-else>

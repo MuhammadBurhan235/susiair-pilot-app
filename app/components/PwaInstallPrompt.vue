@@ -121,7 +121,7 @@ onBeforeUnmount(() => {
         <div class="mt-4 flex items-center gap-2">
           <button
             type="button"
-            class="ops-transition-standard ops-tap-feedback ops-focus-ring rounded-full bg-brand px-4 py-2 text-sm font-bold text-white hover:bg-brand/95 active:bg-brand/90"
+            class="ops-primary-button ops-transition-standard ops-tap-feedback ops-focus-ring bg-brand px-4 py-2 text-sm font-bold text-white hover:bg-brand/95 active:bg-brand/90"
             @click="installApp"
           >
             Install now

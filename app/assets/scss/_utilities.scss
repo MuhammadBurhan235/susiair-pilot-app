@@ -47,7 +47,7 @@
 
   .ops-nav-label {
     margin-top: var(--ops-space-1);
-    font-size: 0.625rem;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1;
   }
@@ -85,11 +85,12 @@
     display: inline-flex;
     align-items: center;
     border-radius: var(--ops-radius-pill);
-    padding: 0.3125rem 0.75rem;
-    font-size: 0.75rem;
+    padding: 6px 14px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    text-align: center;
   }
 
   .ops-auth-panel {
@@ -170,6 +171,11 @@
     transform: scale(0.995);
   }
 
+  .ops-primary-button {
+    border-radius: var(--ops-radius-button);
+    box-shadow: var(--ops-shadow-card);
+  }
+
   .ops-chart-legend-dot {
     border-radius: var(--ops-radius-pill);
   }
@@ -214,7 +220,7 @@
 
     .ops-chart-shell:hover {
       border-color: rgba(14, 33, 56, 0.18);
-      box-shadow: 0 8px 18px rgba(14, 33, 56, 0.06);
+      box-shadow: 0 6px 14px rgba(14, 33, 56, 0.07);
     }
 
     .ops-toggle-chip:hover {
@@ -223,7 +229,7 @@
 
     .ops-limit-card:hover {
       border-color: rgba(14, 33, 56, 0.18);
-      box-shadow: 0 8px 18px rgba(14, 33, 56, 0.06);
+      box-shadow: 0 6px 14px rgba(14, 33, 56, 0.07);
       transform: translateY(-1px);
     }
 
@@ -349,7 +355,7 @@
   @media (hover: hover) and (pointer: fine) {
     .ops-card-hover:hover {
       border-color: rgba(14, 33, 56, 0.18);
-      box-shadow: 0 8px 18px rgba(14, 33, 56, 0.06);
+      box-shadow: 0 6px 14px rgba(14, 33, 56, 0.07);
     }
   }
 

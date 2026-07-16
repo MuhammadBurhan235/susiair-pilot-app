@@ -44,7 +44,7 @@ onMounted(() => {
   <main class="min-h-screen bg-background pb-8">
     <!-- 1. Header Section -->
     <header
-      class="bg-primary text-white p-6 rounded-b-[32px] shadow-md relative overflow-hidden"
+      class="relative overflow-hidden rounded-b-[20px] bg-primary p-6 text-white shadow-[0_4px_12px_rgba(14,33,56,0.08)]"
     >
       <div
         class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10 pointer-events-none"
@@ -102,7 +102,7 @@ onMounted(() => {
 
           <div class="flex justify-between items-center relative">
             <div class="text-center w-1/3">
-              <h3 class="text-3xl font-black text-primary">
+              <h3 class="text-[22px] font-black text-primary leading-tight">
                 {{ upcomingFlight.departure.icao }}
               </h3>
               <p class="text-xs font-medium text-text-secondary mt-1">
@@ -123,7 +123,7 @@ onMounted(() => {
             </div>
 
             <div class="text-center w-1/3">
-              <h3 class="text-3xl font-black text-primary">
+              <h3 class="text-[22px] font-black text-primary leading-tight">
                 {{ upcomingFlight.arrival.icao }}
               </h3>
               <p class="text-xs font-medium text-text-secondary mt-1">

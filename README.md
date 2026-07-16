@@ -66,6 +66,12 @@ npm run build
 npm run preview
 ```
 
+## Hours to Limit Notes
+
+- The detailed brief defines each Hours to Limit chart point as a rolling sum, with the fixed anchor date treated as `2026-05-31`; the implementation follows that stated formula directly against the supplied `public/data/mock-flight-hours.json`.
+- The detailed brief also notes that the dataset includes busy periods where both `1w` and `1m` rolling sums cross the red limit line, but in the supplied mock file and visible anchor window only `1m` crosses while `1w` does not; the implementation preserves the provided dataset as-is rather than altering the source file.
+- The detailed brief PDF states a `1y` chart Y-axis max of `1250`, but the supplied `public/data/mock-flight-hours.json` defines `1y.max` as `1200`; the implementation follows the provided mock file as-is rather than overriding the source dataset.
+
 ## Deployment
 
 Recommended production target for this project:
@@ -443,6 +449,9 @@ If strict submission review requires a verbatim official asset export, replace t
 
 ## Validation Notes
 
+- The detailed brief defines each Hours to Limit chart point as a rolling sum, with the fixed anchor date treated as `2026-05-31`; the implementation follows that stated formula directly against the supplied `public/data/mock-flight-hours.json`.
+- The detailed brief also notes that the dataset includes busy periods where both `1w` and `1m` rolling sums cross the red limit line, but in the supplied mock file and visible anchor window only `1m` crosses while `1w` does not; the implementation preserves the provided dataset as-is rather than altering the source file.
+- The detailed brief PDF states a `1y` chart Y-axis max of `1250`, but the supplied `public/data/mock-flight-hours.json` defines `1y.max` as `1200`; the implementation follows the provided mock file as-is rather than overriding the source dataset.
 - Production build passes successfully with `npm.cmd run build` on Windows PowerShell.
 - No compile errors are present in the edited Vue and SCSS files.
 - Preview checks show no horizontal overflow on the implemented screens.

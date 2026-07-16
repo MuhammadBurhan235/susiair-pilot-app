@@ -98,12 +98,12 @@ export const useFlightStore = defineStore("flight", () => {
 
     const bound = chartBounds.value[toggleKey];
     const windowDays = bound.windowDays;
+    const displayRangeDays = bound.displayRangeDays;
     const chartPoints: ChartPoint[] = [];
 
     const centerDate = parseISO(ANCHOR_DATE);
 
-    // Sumbu X: 15 hari konstan (7 hari sebelum + Hari Ini + 7 hari setelah)
-    for (let i = -7; i <= 7; i++) {
+    for (let i = -displayRangeDays; i <= displayRangeDays; i++) {
       const currentPointDateStr = format(addDays(centerDate, i), "yyyy-MM-dd");
 
       // Hitung sumbu Y menggunakan rumus Rolling Sum

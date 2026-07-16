@@ -68,7 +68,7 @@ const handleLogin = () => {
 
         <button
           type="submit"
-          class="ops-transition-standard ops-tap-feedback mt-2 w-full rounded-full bg-brand py-3.5 text-sm font-bold tracking-wide text-white shadow-md enabled:hover:bg-brand/95 enabled:hover:shadow-lg enabled:active:scale-95 enabled:active:bg-brand/90 disabled:cursor-not-allowed disabled:opacity-60"
+          class="ops-primary-button ops-transition-standard ops-tap-feedback mt-2 w-full bg-brand py-3.5 text-sm font-bold tracking-wide text-white enabled:hover:bg-brand/95 enabled:hover:shadow-[0_6px_14px_rgba(230,55,87,0.16)] enabled:active:scale-95 enabled:active:bg-brand/90 disabled:cursor-not-allowed disabled:opacity-60"
         >
           Sign In
         </button>
