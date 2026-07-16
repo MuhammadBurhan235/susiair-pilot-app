@@ -13,25 +13,25 @@ Nuxt 4 mobile-first prototype for pilot schedules, rolling flight-hour limits, a
 
 ## Setup
 
-Install dependencies:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-Run the app locally:
+2. Run the app locally:
 
 ```bash
 npm run dev
 ```
 
-Build for production:
+3. Build for production:
 
 ```bash
 npm run build
 ```
 
-Preview the production build:
+4. Preview the production build:
 
 ```bash
 npm run preview
