@@ -5,7 +5,6 @@
     <PwaInstallPrompt />
   </ClientOnly>
   <NuxtLayout>
-    <!-- Biarkan polos seperti ini -->
     <NuxtPage />
   </NuxtLayout>
 </template>
