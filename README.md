@@ -1,4 +1,4 @@
-# Susi Air Ops - Pilot Companion
+# Susi Air Ops - Pilot Operations
 
 A mobile-first prototype for Susi Air pilot operations, featuring schedules, rolling flight-hour limit calculations, and operational document tracking.
 
@@ -18,14 +18,6 @@ A mobile-first prototype for Susi Air pilot operations, featuring schedules, rol
 - Chart.js with vue-chartjs: a pragmatic choice for the rolling-sum hours chart because it is stable, well-documented, and flexible enough for the regulatory limit overlay.
 - date-fns: keeps date math explicit and lightweight for anchor-date logic, calendar generation, and chart labels.
 - lucide-vue-next: matches the brief direction for clean line icons and works well with the minimalist operational UI.
-
-## What I Would Do Differently With More Time
-
-- Replace the current derived logo assets with an approved official export pipeline and generate a full dedicated PWA icon set.
-- Add a final device-based QA pass at exact 390px width and on real Android install flows after deployment to HTTPS.
-- Expand the document and schedule interactions beyond placeholders so more cards and rows lead to real detail screens.
-- Add automated tests for store calculations, especially rolling-hour sums and schedule mapping.
-- Refine the in-app install guidance for platform-specific cases such as Android Chrome versus iOS Safari.
 
 ## Stack
 
@@ -456,3 +448,11 @@ If strict submission review requires a verbatim official asset export, replace t
 - No compile errors are present in the edited Vue and SCSS files.
 - Preview checks show no horizontal overflow on the implemented screens.
 - The app is operationally ready for VPS deployment because the current Nuxt output is `node-server` and runs as a standard Node process.
+
+## What I Would Do Differently With More Time
+
+- Replace the current derived logo assets with an approved official export pipeline and generate a full dedicated PWA icon set.
+- Add a final device-based QA pass at exact 390px width and on real Android install flows after deployment to HTTPS.
+- Expand the document and schedule interactions beyond placeholders so more cards and rows lead to real detail screens.
+- Add automated tests for store calculations, especially rolling-hour sums and schedule mapping.
+- Refine the in-app install guidance for platform-specific cases such as Android Chrome versus iOS Safari.

@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     registerType: "autoUpdate",
     manifest: {
       id: "/",
-      name: "Susi Air Ops - Pilot Companion",
+      name: "Susi Air Ops",
       short_name: "Susi Air Ops",
       description:
         "Mobile-first pilot operations companion for schedules, flight hour limits, and operational documents.",
@@ -50,7 +50,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
 
     head: {
-      title: "Susi Air Ops - Pilot Companion",
+      title: "Susi Air Ops",
       meta: [
         { charset: "utf-8" },
         {
