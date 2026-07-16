@@ -65,6 +65,21 @@
     transform: none;
   }
 
+  .ops-nav-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 32px;
+    border-radius: 9999px;
+    transition: background-color var(--ops-duration-medium)
+      var(--ops-ease-standard);
+  }
+
+  .ops-nav-item.router-link-active .ops-nav-icon-wrapper {
+    background-color: rgba(230, 55, 87, 0.15);
+  }
+
   .ops-icon-button {
     display: inline-flex;
     align-items: center;
@@ -216,6 +231,10 @@
   @media (hover: hover) and (pointer: fine) {
     .ops-nav-item:hover {
       color: #0e2138;
+    }
+
+    .ops-nav-item:hover .ops-nav-icon-wrapper {
+      background-color: rgba(230, 55, 87, 0.1);
     }
 
     .ops-chart-shell:hover {

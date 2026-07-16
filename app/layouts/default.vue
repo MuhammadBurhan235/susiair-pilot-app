@@ -15,7 +15,9 @@ import { Home, CalendarDays, BookOpen, MoreHorizontal } from "lucide-vue-next";
         class="ops-nav-item ops-focus-ring"
         exact-active-class="!text-primary"
       >
-        <Home :size="24" />
+        <div class="ops-nav-icon-wrapper">
+          <Home :size="24" :stroke-width="2" />
+        </div>
         <span class="ops-nav-label">Home</span>
       </NuxtLink>
 
@@ -24,7 +26,9 @@ import { Home, CalendarDays, BookOpen, MoreHorizontal } from "lucide-vue-next";
         class="ops-nav-item ops-focus-ring"
         exact-active-class="!text-primary"
       >
-        <CalendarDays :size="24" />
+        <div class="ops-nav-icon-wrapper">
+          <CalendarDays :size="24" :stroke-width="2" />
+        </div>
         <span class="ops-nav-label">Schedule</span>
       </NuxtLink>
 
@@ -34,7 +38,9 @@ import { Home, CalendarDays, BookOpen, MoreHorizontal } from "lucide-vue-next";
         disabled
         aria-disabled="true"
       >
-        <BookOpen :size="24" />
+        <div class="ops-nav-icon-wrapper">
+          <BookOpen :size="24" :stroke-width="2" />
+        </div>
         <span class="ops-nav-label">Logbook</span>
       </button>
 
@@ -44,7 +50,9 @@ import { Home, CalendarDays, BookOpen, MoreHorizontal } from "lucide-vue-next";
         disabled
         aria-disabled="true"
       >
-        <MoreHorizontal :size="24" />
+        <div class="ops-nav-icon-wrapper">
+          <MoreHorizontal :size="24" :stroke-width="2" />
+        </div>
         <span class="ops-nav-label">More</span>
       </button>
     </nav>
