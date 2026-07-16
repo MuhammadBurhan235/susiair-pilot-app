@@ -56,30 +56,125 @@ This project currently builds to a Nuxt `node-server` output, so it is naturally
 
 ### VPS Deployment Flow
 
-1. Push this repository to GitHub or copy the project to the server.
+1. Push this repository to GitHub.
 2. SSH into the VPS.
-3. Install dependencies:
+3. Clone the repository if this is the first deployment:
+
+```bash
+git clone YOUR_GITHUB_REPO_URL ~/susiair-pilot-app
+cd ~/susiair-pilot-app
+```
+
+4. If the repository is already on the VPS, update it instead:
+
+```bash
+cd ~/susiair-pilot-app
+git pull origin main
+```
+
+5. Install dependencies:
 
 ```bash
 npm install
 ```
 
-4. Build the production app:
+6. Build the production app:
 
 ```bash
 npm run build
 ```
 
-5. Start the Nuxt server output:
+7. Start the Nuxt server output manually once to verify the build:
 
 ```bash
-node .output/server/index.mjs
+PORT=3001 npm run start
 ```
 
-6. Put the process behind PM2 or systemd so it stays alive after reboot.
-7. Configure Nginx to proxy HTTPS traffic to the Nuxt server port.
-8. Enable SSL on the domain or subdomain.
-9. Open the final HTTPS URL and verify the PWA install flow from Android Chrome.
+8. Open a second terminal tab and verify the app is responding:
+
+```bash
+curl http://127.0.0.1:3001
+ss -tulpn | grep 3001
+```
+
+9. Stop the manual process with `Ctrl + C` after the check passes.
+10. Start the app with PM2 so it stays alive after logout or reboot.
+11. Configure Nginx to proxy HTTPS traffic to port `3001`.
+12. Point the chosen domain or subdomain DNS to the VPS IP.
+13. Enable SSL on the domain or subdomain.
+14. Open the final HTTPS URL and verify the PWA install flow from Android Chrome.
+
+### Full VPS Setup From Scratch
+
+1. Connect to the VPS:
+
+```bash
+ssh YOUR_USERNAME@YOUR_VPS_IP
+```
+
+2. Install Node.js, npm, Git, and Nginx if they are not already available.
+
+3. Clone or update the project repository.
+
+4. Install project dependencies:
+
+```bash
+cd ~/susiair-pilot-app
+npm install
+```
+
+5. Build the app:
+
+```bash
+npm run build
+```
+
+6. Verify the Nitro output exists:
+
+```bash
+ls -lah .output/server/index.mjs
+```
+
+7. Run the app on port `3001`:
+
+```bash
+PORT=3001 npm run start
+```
+
+8. In a new terminal session, verify local response:
+
+```bash
+curl http://127.0.0.1:3001
+```
+
+9. Stop the manual process and daemonize it with PM2:
+
+```bash
+PORT=3001 pm2 start .output/server/index.mjs --name susiair-pilot-app
+pm2 save
+pm2 startup
+```
+
+10. Check PM2 status:
+
+```bash
+pm2 list
+pm2 logs susiair-pilot-app
+```
+
+11. Create an Nginx site config that proxies the public domain to `127.0.0.1:3001`.
+
+12. Enable the Nginx site and reload Nginx.
+
+13. Issue an SSL certificate with Certbot.
+
+14. Test the final public HTTPS URL and the PWA asset endpoints:
+
+```bash
+curl -I https://YOUR_SUBDOMAIN
+curl -I https://YOUR_SUBDOMAIN/sw.js
+curl -I https://YOUR_SUBDOMAIN/pwa-192.png
+```
 
 ### Recommended Process Manager
 
@@ -87,9 +182,16 @@ PM2 example:
 
 ```bash
 npm install -g pm2
-pm2 start .output/server/index.mjs --name susiair-pilot-app
+PORT=3001 pm2 start .output/server/index.mjs --name susiair-pilot-app
 pm2 save
 pm2 startup
+```
+
+If the VPS terminal is accidentally closed, simply reconnect with SSH and continue from the last incomplete step. The running PM2 process can always be checked with:
+
+```bash
+pm2 list
+pm2 logs susiair-pilot-app
 ```
 
 ### Nginx Notes
@@ -98,6 +200,41 @@ pm2 startup
 - preserve `Host` and `X-Forwarded-*` headers
 - do not block `sw.js`, manifest-related assets, or static files under `/_nuxt/`
 - keep the site fully available over HTTPS so PWA installability remains valid
+
+Example Nginx server block:
+
+```nginx
+server {
+	listen 80;
+	server_name YOUR_SUBDOMAIN;
+
+	location / {
+		proxy_pass http://127.0.0.1:3001;
+		proxy_http_version 1.1;
+		proxy_set_header Host $host;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Proto $scheme;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+	}
+}
+```
+
+Enable and reload:
+
+```bash
+sudo ln -s /etc/nginx/sites-available/susiair-pilot-app /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+SSL example:
+
+```bash
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d YOUR_SUBDOMAIN
+```
 
 ### Submission Deliverables
 
