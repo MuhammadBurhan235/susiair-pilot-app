@@ -383,3 +383,17 @@
     box-shadow: 0 0 0 4px rgba(14, 33, 56, 0.1);
   }
 }
+
+@media (min-width: 768px) {
+  .ops-nav-offset {
+    padding-bottom: 0 !important;
+  }
+
+  .ops-nav-shell {
+    border-top: none;
+    border-right: 1px solid var(--ops-border-subtle);
+    box-shadow: 6px 0 18px rgba(14, 33, 56, 0.06);
+    min-height: 100vh;
+    padding-bottom: 0;
+  }
+}

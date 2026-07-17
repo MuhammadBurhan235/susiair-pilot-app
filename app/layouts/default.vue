@@ -3,12 +3,9 @@ import { Home, CalendarDays, BookOpen, MoreHorizontal } from "lucide-vue-next";
 </script>
 
 <template>
-  <div class="min-h-screen bg-background ops-nav-offset">
-    <slot />
-
-    <!-- Bottom Navigation -->
+  <div class="min-h-screen bg-background flex flex-col md:flex-row">
     <nav
-      class="ops-nav-shell fixed bottom-0 w-full flex justify-around px-2 pt-3 z-50"
+      class="ops-nav-shell fixed bottom-0 w-full flex justify-around px-2 pt-3 z-50 md:sticky md:top-0 md:w-24 md:h-screen md:flex-col md:justify-start md:items-center md:pt-8 md:gap-8"
     >
       <NuxtLink
         to="/home"
@@ -56,5 +53,10 @@ import { Home, CalendarDays, BookOpen, MoreHorizontal } from "lucide-vue-next";
         <span class="ops-nav-label">More</span>
       </button>
     </nav>
+
+    <!-- Slot konten utama -->
+    <main class="flex-1 ops-nav-offset w-full md:w-auto md:min-w-0">
+      <slot />
+    </main>
   </div>
 </template>
