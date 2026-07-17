@@ -1,6 +1,6 @@
 # Susi Air Ops - Pilot Operations
 
-A mobile-first prototype for Susi Air pilot operations, featuring schedules, rolling flight-hour limit calculations, and operational document tracking.
+A Progressive Web App (PWA) prototype for Susi Air pilot operations, featuring schedules, rolling flight-hour limit calculations, and operational document tracking. Built with a fully responsive layout, the application presents a sticky sidebar navigation on desktop screens, which adapts seamlessly into a bottom navigation bar on mobile devices.
 
 ## Deliverables
 
